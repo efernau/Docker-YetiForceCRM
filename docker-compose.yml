@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+   db:
+     image: mysql
+     volumes:
+       - db_data:/var/lib/mysql
+     ports:
+       - "3306:3306"
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: yetiforce
+       MYSQL_DATABASE: yetiforce
+       MYSQL_USER: yetiforce
+       MYSQL_PASSWORD: yetiforce
+
+   yetiforcecrm:
+     links:
+       - db
+     build: 4.0.0
+     ports:
+       - "8000:80"
+     restart: always
+volumes:
+    db_data:
