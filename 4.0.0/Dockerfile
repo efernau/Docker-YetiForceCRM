@@ -8,8 +8,8 @@ ENV WWW_FOLDER /var/www/html
 ENV WWW_USER www-data
 ENV WWW_GROUP www-data
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y wget libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libmcrypt-dev libcurl4-gnutls-dev libpng-dev libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree memcached mysql-client php5-mysqlnd
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y wget libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libmcrypt-dev libcurl4-gnutls-dev libpng-dev libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree memcached mysql-client php5-mysqlnd
 
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos && \
     docker-php-ext-install mysqli curl gd zip mbstring imap pdo_mysql gd iconv mcrypt && \
