@@ -1,6 +1,6 @@
 FROM php:7.1-apache
 
-# SugarCRM 7.21 MAX
+# YetiForce CRM
 ENV DOWNLOAD_URL https://github.com/YetiForceCompany/YetiForceCRM/releases/download/4.0.0/YetiForceCRM-4.0.0-complete.zip
 ENV DOWNLOAD_FILE YetiForceCRM-4.0.0-complete.zip
 ENV EXTRACT_FOLDER YetiForceCRM
