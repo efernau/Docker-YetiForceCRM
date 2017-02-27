@@ -3,6 +3,9 @@
 
 A Docker Compose environment which runs [YetiforceCRM](https://github.com/YetiForceCompany/YetiForceCRM/) in one container (php:7.1-apache)and a MySQL instance in another.	
 
+
+We make reasonable efforts to support our work. Submit a GitHub [issue](https://github.com/efernau/Docker-YetiForceCRM/issues) if you have a security or other general question about this Docker image.
+
 ### Running with Docker Compose
 
 1. Install [Docker and Docker Compose](https://docs.docker.com/compose/install/)
@@ -19,4 +22,3 @@ If you already have MySQL installed or want to use a platform service like Amazo
 
 
 
-We make reasonable efforts to support our work. Submit a GitHub [issue](https://github.com/efernau/Docker-YetiForceCRM/issues) if you have a security or other general question about this Docker image.
