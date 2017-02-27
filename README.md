@@ -16,3 +16,7 @@ If you already have MySQL installed or want to use a platform service like Amazo
 1. Install [Docker](http://docs.docker.com/installation/)
 2. Run `docker run --name yetiforce -e DB_HOST_NAME=yourhostname -e DATABASE_NAME=yourdatabasename -e DB_USER_NAME=yourusername -e DB_PASSWORD=yourpassword -e DB_TYPE=mysql -e DB_TCP_PORT=3306 -e DB_MANAGER=MysqlManager -p 8000:80 -d efero/yetiforcecrm`
 3. Access `http://{docker_host}:8000` from your web browser to finish setting up YetiforceCRM.
+
+
+
+We make reasonable efforts to support our work. Submit a GitHub [issue](https://github.com/efernau/Docker-YetiForceCRM/issues) if you have a security or other general question about this Docker image.
