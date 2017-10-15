@@ -9,7 +9,7 @@ We make reasonable efforts to support our work. Submit a GitHub [issue](https://
 ### Running with Docker Compose
 
 1. Install [Docker and Docker Compose](https://docs.docker.com/compose/install/)
-2. Run `docker-compose up` from the root of this project.
+2. Run `docker-compose up -d` from the root of this project.
 3. Access `http://{docker_host}:8000` from your web browser to finish setting up YetiforceCRM.
 
 ### Running with Docker Run
