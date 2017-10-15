@@ -1,5 +1,5 @@
 
-# YetiforceCRM 4.0.0 Docker
+# YetiforceCRM 4.2.0 Docker
 
 A Docker Compose environment which runs [YetiforceCRM](https://github.com/YetiForceCompany/YetiForceCRM/) in one container (php:7.1-apache)and a MySQL instance in another.	
 
