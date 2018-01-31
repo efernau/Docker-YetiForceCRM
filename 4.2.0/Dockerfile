@@ -18,7 +18,7 @@ RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos && \
 WORKDIR /tmp
 
 RUN wget ${DOWNLOAD_URL} && \
-    unzip YetiForceCRM-4.2.0-complete.zip -d $EXTRACT_FOLDER && \
+    unzip YetiForceCRM-4.3.0-complete.zip -d $EXTRACT_FOLDER && \
     rm $DOWNLOAD_FILE && \
     rm -rf ${WWW_FOLDER}/* && \
     cp -R ${EXTRACT_FOLDER}/* ${WWW_FOLDER}/ && \
