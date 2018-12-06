@@ -1,5 +1,5 @@
 
-# YetiforceCRM 4.2.0 Docker
+# YetiforceCRM Docker
 [![](https://images.microbadger.com/badges/version/efero/yetiforcecrm.svg)](https://microbadger.com/images/efero/yetiforcecrm "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/efero/yetiforcecrm.svg)](https://microbadger.com/images/efero/yetiforcecrm "Get your own image badge on microbadger.com")
 
