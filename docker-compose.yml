@@ -15,7 +15,7 @@ services:
    yetiforce:
      links:
        - mysql
-     build: 4.4.0
+     build: 5.0.0
      ports:
        - "8000:80"
      restart: always
