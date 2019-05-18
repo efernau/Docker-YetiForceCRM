@@ -1,10 +1,15 @@
-version: '3.1'
+version: '3.3'
 
 services:
    mysql:
      image: mysql:5.6
+     volumes:
+       - db_data:/var/lib/mysql
      environment:
        MYSQL_ROOT_PASSWORD: yetiforce
+       MYSQL_DATABASE: yetiforce
+       MYSQL_USER: yetiforce
+       MYSQL_PASSWORD: yetiforce
      restart: always
      ports:
        - "3306:3306"
@@ -15,8 +20,11 @@ services:
    yetiforce:
      links:
        - mysql
-     build: 5.0.0
+     build: 5.1.0
      ports:
        - "8000:80"
      restart: always
+
+volumes:
+    db_data: {}
 
