@@ -10,23 +10,30 @@ ENV WWW_GROUP www-data
 
 RUN apt-get update && apt-get upgrade -y 
 RUN apt-get install -y wget libfreetype6-dev libxml2-dev libjpeg62-turbo-dev libpng-dev libmcrypt-dev libcurl4-gnutls-dev \
-    libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree memcached 
+    libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree memcached exif libldap2-dev imagemagick 
 
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos && \
     docker-php-ext-configure intl && \
-    docker-php-ext-install soap curl gd zip mbstring imap mysqli pdo pdo_mysql gd iconv opcache intl bcmath && \
+    docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
+    docker-php-ext-install ldap exif soap curl gd zip mbstring imap mysqli pdo pdo_mysql gd iconv opcache intl bcmath && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
 
 RUN wget ${DOWNLOAD_URL}
-RUN ls 
 RUN unzip $DOWNLOAD_FILE -d $EXTRACT_FOLDER && \
     rm $DOWNLOAD_FILE && \
     rm -rf ${WWW_FOLDER}/* && \
     cp -R ${EXTRACT_FOLDER}/* ${WWW_FOLDER}/ && \
     chown -R ${WWW_USER}:${WWW_GROUP} ${WWW_FOLDER}/* && \
     chown -R ${WWW_USER}:${WWW_GROUP} ${WWW_FOLDER}
+
+
+RUN a2enmod allowmethods && \
+    echo "<Location \"/var/www/html\">" >> /etc/apache2/apache2.conf  && \
+    echo "  AllowMethods GET POST PUT OPTIONS PATCH PROPFIND REPORT LOCK DELETE COPY MOVE" >> /etc/apache2/apache2.conf  && \
+    echo "  Require all granted" >> /etc/apache2/apache2.conf  && \
+    echo "</Location>" >> /etc/apache2/apache2.conf 
 
 ADD php.ini /usr/local/etc/php/php.ini
 
