@@ -20,7 +20,7 @@ services:
       - mysql
     build: 5.2.0
     ports:
-      - "8000:80"
+      - "7000:7000"
     restart: always
 
 volumes:
